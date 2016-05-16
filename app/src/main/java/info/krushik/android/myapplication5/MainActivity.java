@@ -55,15 +55,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent9);
                 break;
             case R.id.button10:
-                Intent intent10 = new Intent(this, Activity11.class);
+                Intent intent10 = new Intent(this, Activity11MultiSelect.class);
                 startActivity(intent10);
                 break;
             case R.id.button11:
-                Intent intent11 = new Intent(this, Activity12.class);
+                Intent intent11 = new Intent(this, Activity12SimpleSpinner.class);
                 startActivity(intent11);
                 break;
             case R.id.button12:
-                Intent intent12 = new Intent(this, Activity13.class);
+                Intent intent12 = new Intent(this, Activity13CastomAASingeChois.class);
                 startActivity(intent12);
                 break;
         }

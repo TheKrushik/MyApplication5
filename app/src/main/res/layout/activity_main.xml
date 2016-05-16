@@ -46,7 +46,7 @@
         android:layout_height="wrap_content"
         android:onClick="OnClick"
         android:text="New Button"
-        android:layout_below="@+id/button10"
+        android:layout_below="@+id/button9"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"/>
 
@@ -85,21 +85,21 @@
         android:id="@+id/button8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button3"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
         android:onClick="OnClick"
-        android:text="New Button"/>
+        android:text="New Button"
+        android:layout_below="@+id/button7"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"/>
 
     <Button
         android:id="@+id/button9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/button8"
         android:onClick="OnClick"
-        android:text="New Button"/>
+        android:text="New Button"
+        android:layout_below="@+id/button3"
+        android:layout_alignLeft="@+id/button11"
+        android:layout_alignStart="@+id/button11"/>
 
     <Button
         android:id="@+id/button10"
@@ -117,9 +117,9 @@
         android:layout_height="wrap_content"
         android:onClick="OnClick"
         android:text="New Button"
-        android:layout_above="@+id/button5"
-        android:layout_alignLeft="@+id/button10"
-        android:layout_alignStart="@+id/button10"/>
+        android:layout_below="@+id/button10"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"/>
 
     <Button
         android:id="@+id/button12"

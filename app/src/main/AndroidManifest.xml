@@ -33,11 +33,11 @@
         </activity>
         <activity android:name=".Activity10SingleSelect">
         </activity>
-        <activity android:name=".Activity11">
+        <activity android:name=".Activity11MultiSelect">
         </activity>
-        <activity android:name=".Activity12">
+        <activity android:name=".Activity12SimpleSpinner">
         </activity>
-        <activity android:name=".Activity13">
+        <activity android:name=".Activity13CastomAASingeChois">
         </activity>
     </application>
 

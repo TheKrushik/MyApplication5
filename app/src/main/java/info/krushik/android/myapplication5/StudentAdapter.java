@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,6 +17,8 @@ public class StudentAdapter extends ArrayAdapter<Student> {
     private int mResource;
     private ArrayList<Student> mStudents;
     private LayoutInflater mInflater;
+
+    private int mPosition = -1;
 
     public StudentAdapter(Context context, int resource, ArrayList<Student> objects){
         super(context, resource, objects);
@@ -28,7 +31,7 @@ public class StudentAdapter extends ArrayAdapter<Student> {
     }
 
     @Override
-    public View getView(int position, View convertViev, ViewGroup parent){
+    public View getView(final int position, View convertViev, ViewGroup parent){
         View view = mInflater.inflate(mResource, null);
 
         final Student student = mStudents.get(position);
@@ -37,15 +40,50 @@ public class StudentAdapter extends ArrayAdapter<Student> {
         ((TextView) view.findViewById(R.id.textViewLastName)).setText(student.LastName);
         ((TextView) view.findViewById(R.id.textViewAge)).setText(String.valueOf(student.Age));
 
-        Button button = (Button) view.findViewById(R.id.button);
-        button.setOnClickListener(new  View.OnClickListener(){
+        final RadioButton radioButton = (RadioButton) view.findViewById(R.id.radio);
+
+        if (position == mPosition){
+            radioButton.setChecked(true);
+        }
+
+        view.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
-                if (mListener != null) {
-                    mListener.onDeleteClick(student);
-                }
+            public void onClick(View v) {
+                radioButton.setChecked(true);
+                mPosition = position;
+
+                notifyDataSetChanged();
             }
         });
+
+//        Button button = (Button) view.findViewById(R.id.button);
+//        button.setOnClickListener(new  View.OnClickListener(){
+//            @Override
+//            public void onClick(View v){
+//                if (mListener != null) {
+//                    mListener.onDeleteClick(student);
+//                }
+//            }
+//        });
+
+        return  view;
+    }
+
+    public int getChecked(){
+        return mPosition;
+    }
+
+    @Override
+    public View getDropDownView(int position, View convertView, ViewGroup parent) {
+        View view = mInflater.inflate(mResource, null);
+
+        final Student student = mStudents.get(position);
+
+        ((TextView) view.findViewById(R.id.textViewFirstName)).setText(student.FirstName);
+        ((TextView) view.findViewById(R.id.textViewLastName)).setText(student.LastName);
+
+        Button button = (Button) view.findViewById(R.id.button);
+        button.setVisibility(View.GONE);
 
         return  view;
     }
